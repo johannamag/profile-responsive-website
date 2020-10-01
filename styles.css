@@ -1,0 +1,151 @@
+:root {
+  --accent: #de677e;
+  --light: #b4bfe3;
+  --lighttext: #97a0be;
+  --dark: #373756;
+  --overlaystart: rgba(55, 55, 86, 0.9);
+  --overlayend: rgba(55, 55, 86, 0.7);
+  --ease: all 0.3s ease 0s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark);
+}
+
+h1,
+i {
+  color: var(--light);
+}
+
+p,
+a {
+  color: var(--lighttext);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "top";
+}
+
+.top {
+  grid-area: top;
+  background-image: linear-gradient(
+      to right,
+      var(--overlaystart),
+      var(--overlayend)
+    ),
+    url("media/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 600px 600px 1fr;
+  grid-gap: 20px;
+  grid-template-areas: ". content profile .";
+}
+
+.top__content {
+  grid-area: content;
+  align-self: center;
+  justify-self: center;
+  padding: 10px;
+}
+
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 80px;
+}
+
+.underline {
+  text-decoration: none;
+  position: relative;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  border-width: 1.5px;
+  border-style: solid;
+  color: var(--accent);
+  animation-name: underline;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes underline {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.social {
+  display: flex;
+}
+
+.social__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.social__item:nth-child(2) {
+  margin-left: 50px;
+}
+
+i {
+  font-size: 25px;
+}
+
+.social__copy {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 15px;
+  transition: var(--ease);
+}
+
+.social__copy:hover {
+  filter: brightness(150%);
+}
+
+.top__profile {
+  grid-area: profile;
+  align-self: center;
+  justify-self: center;
+  background-image: url("media/profile.jpg");
+  width: 526px;
+  height: 526px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
