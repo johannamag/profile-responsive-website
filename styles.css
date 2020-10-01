@@ -149,3 +149,311 @@ i {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media only screen and (max-width: 1280px) {
+  .top {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "profile";
+  }
+  .top__profile {
+    width: 100%;
+    height: 526px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .top__content {
+    transform: scale(0.85);
+  }
+  .social {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .social__item:nth-child(2) {
+    margin-left: 0px;
+    a/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+:root {
+      --accent: #de677e;
+      --light: #b4bfe3;
+      --lighttext: #97a0be;
+      --dark: #373756;
+      --overlaystart: rgba(55, 55, 86, 0.9);
+      --overlayend: rgba(55, 55, 86, 0.7);
+      --ease: all 0.3s ease 0s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--dark);
+    }
+
+    h1,
+    i {
+      color: var(--light);
+    }
+
+    p,
+    a {
+      color: var(--lighttext);
+      text-decoration: none;
+    }
+
+    h1 {
+      font-family: "Work Sans", sans-serif;
+      font-size: 72px;
+      font-weight: 300;
+    }
+
+    .wrapper {
+      height: 100vh;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "top";
+    }
+
+    .top {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: top;
+      background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(var(--overlaystart)),
+          to(var(--overlayend))
+        ),
+        url("media/bg.jpg");
+      background-image: -o-linear-gradient(
+          left,
+          var(--overlaystart),
+          var(--overlayend)
+        ),
+        url("media/bg.jpg");
+      background-image: linear-gradient(
+          to right,
+          var(--overlaystart),
+          var(--overlayend)
+        ),
+        url("media/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 20px 600px 20px 600px 20px 1fr;
+      grid-template-columns: 1fr 600px 600px 1fr;
+      grid-gap: 20px;
+      grid-template-areas: ". content profile .";
+    }
+
+    .top__content {
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+      grid-area: content;
+      -ms-grid-row-align: center;
+      align-self: center;
+      -ms-grid-column-align: center;
+      justify-self: center;
+      padding: 10px;
+    }
+
+    .subtitle {
+      font-family: "Open Sans", sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      margin-bottom: 80px;
+    }
+
+    .underline {
+      text-decoration: none;
+      position: relative;
+    }
+
+    .underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      border-width: 1.5px;
+      border-style: solid;
+      color: var(--accent);
+      -webkit-animation-name: underline;
+      animation-name: underline;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease;
+      animation-timing-function: ease;
+    }
+
+    @-webkit-keyframes underline {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes underline {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    .social {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .social__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .social__item:nth-child(2) {
+      margin-left: 50px;
+    }
+
+    i {
+      font-size: 25px;
+    }
+
+    .social__copy {
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      margin-left: 15px;
+      -webkit-transition: var(--ease);
+      -o-transition: var(--ease);
+      transition: var(--ease);
+    }
+
+    .social__copy:hover {
+      -webkit-filter: brightness(150%);
+      filter: brightness(150%);
+    }
+
+    .top__profile {
+      -ms-grid-row: 1;
+      -ms-grid-column: 5;
+      grid-area: profile;
+      -ms-grid-row-align: center;
+      align-self: center;
+      -ms-grid-column-align: center;
+      justify-self: center;
+      background-image: url("media/profile.jpg");
+      width: 526px;
+      height: 526px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      .top {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto 20px auto;
+        grid-template-areas: "content" "profile";
+      }
+      .top__profile {
+        width: 100%;
+        height: 526px;
+      }
+      .top__content {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+      }
+      .top__profile {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .top__content {
+        -webkit-transform: scale(0.85);
+        -ms-transform: scale(0.85);
+        transform: scale(0.85);
+      }
+      .social {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+      }
+      .social__item:nth-child(2) {
+        margin-left: 0px;
+      }
+      .top__profile {
+        display: none;
+      }
+      .underline::after {
+        bottom: -5px;
+      }
+    }
+    .example {
+      display: -ms-grid;
+      display: grid;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(white),
+        to(black)
+      );
+      background: -o-linear-gradient(top, white, black);
+      background: linear-gradient(to bottom, white, black);
+    }
+  }
+  .top__profile {
+    display: none;
+  }
+  .underline::after {
+    bottom: -5px;
+  }
+}
